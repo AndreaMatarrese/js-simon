@@ -9,6 +9,7 @@ html{
 body{
     height: 100vh;
     background-color: azure;
+    display: flex;
 }
 .container{
     background-color: #bdbdbd;
@@ -17,4 +18,11 @@ body{
     height: 60%;
     width: 80%;
     color: white;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide{
+    display: none;
 }
