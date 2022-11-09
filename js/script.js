@@ -13,53 +13,57 @@
 
 const container = document.querySelector('.container')
 const numbers = document.querySelector('.numbers')
+const title = document.querySelector('h1')
 const numbersEnd = document.querySelector('.numbers-end')
 const btnStart = document. querySelector('#start')
 const btnVerify = document.querySelector('#verify')
 
 const arrNumStart = [];
-
-const arrNumEnd = [];
-// comparsa numeri al click del bottone
-btnStart.addEventListener('click', function(){
-    for(let i=0; i<5; i++){
-        btnStart.classList.add('hide');
-        const numStart = parseInt(Math.random() * 100);
-        console.log('Numeri', numStart);
-        arrNumStart.push(numStart);
+let arrNumEnd = [];
+// comparsa numeri al caricamento     
+  inserted();
+    function inserted(){
+        for(let i=0; i<5; i++){
+            const numStart = parseInt(Math.random() * 100);
+            console.log('Numeri', numStart);
+            arrNumStart.push(numStart);
+        }
+        numbers.append(arrNumStart);
+        return arrNumStart;
     }
-    numbers.append(arrNumStart);
     // funzione per la disattivazione
     setTimeout(visualizzazione, 3000);
+
     function visualizzazione(){
+        title.innerHTML='Scrivi i numeri che ricordi'
         numbers.classList.add('hide');
-        btnStart.classList.add('hide');
     }
     // funzione per l'inserimento dati
-    setTimeout(insert, 4000)
+    setTimeout(insert, 4000);
+
     function insert(){
-        for(let i=0; i<5; i++){
+        for(let j=0; j<5; j++){
             numbersEnd.innerHTML='';
+            title.innerHTML='I tuoi numeri'
             const numEnd = parseInt(prompt('inserisci i 5 numeri'));
             arrNumEnd.push(numEnd);
             numbersEnd.append(arrNumEnd);
         }
         console.log('Numeri inseriti', arrNumEnd)
+        return arrNumEnd;
     }
-});
 
     /*controllo dei dati inseriti con quelli originali 
     se (il nuovo array include numeri del vecchio array, stampa i numeri indovinati)
     altrimenti (stampa: nessun numero uguale a quelli stampati)*/
    
-btnVerify.addEventListener('click', function(){
-    let numStart =
-        if(NumEnd=== arrNumStart[i]){
-            console.log('hai una buona memoria')
-        } else{
-            console.log('non hai una buona memoria')
-        }
-    
-});  
+// btnVerify.addEventListener('click', function(){
+//         if(insert() === inserted()){
+//             console.log('ci sei riuscito')
+
+//         } else {
+//             console.log('riprova')
+//         }
+// });  
 
 

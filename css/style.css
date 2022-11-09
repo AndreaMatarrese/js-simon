@@ -12,7 +12,7 @@ body{
     display: flex;
 }
 .container{
-    background-color: #bdbdbd;
+    background-color: #343434;
     height: 400px;
     width: 600px;
     height: 60%;
@@ -20,8 +20,12 @@ body{
     color: white;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.numbers, .numbers-end{
+    font-size: 50px;
 }
 .hide{
     display: none;
